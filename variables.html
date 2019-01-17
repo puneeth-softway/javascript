@@ -1,0 +1,104 @@
+<script type="text/javascript">
+ console.log('Example 1');
+ var Früh = "foobar";console.log(Früh);
+ var früh = "Foobar";console.log(früh);
+ console.log('=========');
+
+ console.log('Example 2');
+ var a;
+ console.log('The value of a is ' + a); // The value of a is undefined
+
+ console.log('The value of b is ' + b); // The value of b is undefined
+ var b;
+ // This one may puzzle you until you read 'Variable hoisting' below
+
+ //console.log('The value of c is ' + c); // Uncaught ReferenceError: c is not defined
+
+ let x;
+ console.log('The value of x is ' + x); // The value of x is undefined
+
+ //console.log('The value of y is ' + y); // Uncaught ReferenceError: y is not defined
+ let y;
+ console.log('=========');
+
+
+ console.log('Example 3');
+ var a;
+ console.log(a + 2);  // Evaluates to NaN
+ var n = null;
+ console.log(n * 32); // Will log 0 to the console
+ console.log(n - 32);
+ console.log(a*n);
+ console.log(a-n);
+ console.log('==========');
+
+ console.log('Example 4');
+ if (true) {
+   var x = 5;
+ }
+ console.log(x);  // x is 5
+
+ if (true) {
+   let y = 5;
+ }
+ console.log(y);  // ReferenceError: y is not defined
+
+ console.log('=========');
+
+ console.log('Example 5');
+ /**
+  * Example 1
+  */
+ console.log(x === undefined); // true
+ var x = 3;
+
+ /**
+  * Example 2
+  */
+ // will return a value of undefined
+ var myvar = 'my value';
+	 
+ (function() {
+   console.log(myvar); // undefined
+   var myvar = 'local value';
+ })();
+
+
+ /**
+  * Example 1
+  */
+ var x;
+ console.log(x === undefined); // true
+ x = 3;
+	 
+ /**
+  * Example 2
+  */
+ var myvar = 'my value';
+	 
+ (function() {
+   var myvar;
+   console.log(myvar); // undefined
+   myvar = 'local value';
+ })();
+ console.log('==========');
+
+
+	console.log('Example 6');
+	var sales = 'Toyota';
+
+	function carTypes(name) {
+	  if (name === 'Honda') {
+	    return name;
+	  } else {
+	    return "Sorry, we don't sell " + name + ".";
+	  }
+	}
+
+	var car = { myCar: 'Saturn', getCar: carTypes('Honda'), special: sales };
+
+	console.log(car.myCar);   // Saturn
+	console.log(car.getCar);  // Honda
+	console.log(car.special);
+	console.log('=========');
+</script>
