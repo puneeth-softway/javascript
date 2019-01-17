@@ -1,2 +1,77 @@
 <script>
+ console.log('example 1');
+ var foo = 42;
+ console.log(foo);
+ console.log(typeof(foo));// foo is now a number
+ foo     = 'bar'; 
+ console.log(foo); 
+ console.log(typeof(foo));// foo is now a string
+ foo     = true;  
+ console.log(foo);
+ console.log(typeof(foo));
+ console.log('=======================');
+
+
+ console.log('example 2');
+ console.log( 1 / 0 ); // Infinity
+ console.log(typeof( 1 / 0));
+ console.log("not a number" / 2);
+ console.log(typeof("not a number" / 2));
+ console.log('=======================');
+
+ console.log('example 3');
+ var p = 1;
+ var p = 2;
+ let str = "Hello";
+ let str2 = 'Single quotes are ok too';
+ let phrase = `can embed ${str}`;
+ let phrase2 = `can embed ${str2}`;
+ console.log(phrase);
+ console.log(phrase2);
+ console.log( "the result is ${1 + 2}" );
+ console.log('=======================');
+
+ console.log('example 4');
+ let isGreater = 4 > 1;
+ console.log( isGreater );
+ let isLeaser = 4 < 1;
+ console.log( isLeaser );
+ console.log('=======================');
+
+ console.log('example 5');
+ let age = null;
+ console.log(age);
+ console.log(typeof(age));
+ console.log('=======================');
+
+ console.log('example 6');
+ let x;
+ console.log(x); // shows "undefined"
+ console.log(typeof(x));
+
+ let y = 123;
+ y = undefined;
+ console.log(y); // "undefined"
+
+ console.log('=======================');
+
+
+ console.log('example 7');
+ console.log(typeof undefined); // "undefined"
+
+ console.log(typeof 0); // "number"
+
+ console.log(typeof true); // "boolean"
+
+ console.log(typeof "foo"); // "string"
+
+ console.log(typeof Symbol("id")); // "symbol"
+
+ console.log(typeof Math); // "object"  (1)
+
+ console.log(typeof null); // "object"  (2)
+
+ console.log(typeof alert); // "function"  (3)
+ console.log('=======================');
+
 </script>
