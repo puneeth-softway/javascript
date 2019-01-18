@@ -16,32 +16,52 @@
 	}
 </style>
 <script type="text/javascript">
-	
+	function calculate(){
+		var res = 0;
+		var input_equation = document.getElementById("input_box").value;
+		var res = eval(input_equation);
+		if(res == Infinity){
+			res = 0;
+		}
+		document.getElementById("input_box").value = res;
+	}
+	function clearinput(){
+		document.getElementById("input_box").value = '';
+	}
+	function inputEquation(choice){
+		var equation = document.getElementById("input_box").value;
+		var equation_length = equation.length;
+		var last_char = equation[equation_length - 1];
+		if(choice == '+' || choice == '-' || choice == '*' || choice == '/' || choice == '.' ){
+			if(last_char == '+' || last_char == '-' || last_char == '*' || last_char == '/' || last_char == '.'){
+				return;
+			}
+		}
+		equation = equation +  choice;
+		document.getElementById("input_box").value = equation;
+	}
 </script>
-
-<form>
-	<div>
-	<input type="text" name="input_text" class="inputText"><br>
-	<button class="numbers">1</button>
-	<button class="numbers">2</button>
-	<button class="numbers">3</button>
-	<button class="numbers">+</button>
+<div>
+	<input type="text" id="input_box" class="inputText" placeholder="0"><br>
+	<button class="numbers" onclick="inputEquation(1)">1</button>
+	<button class="numbers" onclick="inputEquation(2)">2</button>
+	<button class="numbers" onclick="inputEquation(3)">3</button>
+	<button class="numbers" onclick="inputEquation('+')">+</button>
 	<br>
-	<button class="numbers">4</button>
-	<button class="numbers">5</button>
-	<button class="numbers">6</button>
-	<button class="numbers">-</button>
+	<button class="numbers" onclick="inputEquation(4)">4</button>
+	<button class="numbers" onclick="inputEquation(5)">5</button>
+	<button class="numbers" onclick="inputEquation(6)">6</button>
+	<button class="numbers" onclick="inputEquation('-')">-</button>
 	<br>
-	<button class="numbers">7</button>
-	<button class="numbers">8</button>
-	<button class="numbers">9</button>
-	<button class="numbers">*</button>
+	<button class="numbers" onclick="inputEquation(7)">7</button>
+	<button class="numbers" onclick="inputEquation(8)">8</button>
+	<button class="numbers" onclick="inputEquation(9)">9</button>
+	<button class="numbers" onclick="inputEquation('*')">*</button>
 	<br>
-	<button class="numbers">Ac</button>
-	<button class="numbers">0</button>
-	<button class="numbers">.</button>
-	<button class="numbers">/</button>
+	<button  class="numbers" onclick="clearinput()">Ac</button>
+	<button class="numbers" onclick="inputEquation(0)">0</button>
+	<button class="numbers" onclick="inputEquation('.')">.</button>
+	<button class="numbers" onclick="inputEquation('/')">/</button>
 	<br>
-	<button class="equalbtn"><b>=</b></button>
-	</div>
-</form>
+	<button onclick="calculate()" class="equalbtn"><b>=</b></button>
+</div>
